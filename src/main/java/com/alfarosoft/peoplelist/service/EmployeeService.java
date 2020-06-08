@@ -1,6 +1,6 @@
-package service;
+package com.alfarosoft.peoplelist.service;
 
-import model.Employee;
+import com.alfarosoft.peoplelist.model.Employee;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,11 +18,11 @@ public class EmployeeService {
     }
 
     public Employee addEmployee (Employee employee){
-        return new Employee();
+        return employee;
     }
 
     public Employee updateEmployee (String id, Employee employee){
-        return new Employee();
+        return employee;
     }
 
     public void removeEmployee (String id){

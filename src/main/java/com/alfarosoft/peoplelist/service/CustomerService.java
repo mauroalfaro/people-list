@@ -1,6 +1,6 @@
-package service;
+package com.alfarosoft.peoplelist.service;
 
-import model.Customer;
+import com.alfarosoft.peoplelist.model.Customer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,11 +18,11 @@ public class CustomerService {
     }
 
     public Customer addCustomer (Customer customer){
-        return new Customer();
+        return customer;
     }
 
     public Customer updateCustomer(String id, Customer customer){
-        return new Customer();
+        return customer;
     }
 
     public void removeCustomer (String id){

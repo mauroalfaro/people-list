@@ -1,25 +1,40 @@
-package model;
+package com.alfarosoft.peoplelist.model;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Date;
 import java.util.Objects;
 
 public class Employee {
 
-    private String id;
-    private String name;
-    private String surname;
-    private String loyaltyId;
-    private Address address;
-    private String phone;
-    private String email;
-    private Date dateHired;
-    private boolean isActiveEmployee;
+    @JsonProperty("employeeId")
+    private String id = null;
 
-    public Employee(String id, String name, String surname, String loyaltyId, Address address, String phone, String email, Date dateHired, boolean isActiveEmployee) {
+    @JsonProperty("employeeName")
+    private String name = null;
+
+    @JsonProperty("employeeSurname")
+    private String surname = null;
+
+    @JsonProperty("employeeAddress")
+    private Address address = null;
+
+    @JsonProperty("employeePhone")
+    private String phone = null;
+
+    @JsonProperty("employeeEmail")
+    private String email = null;
+
+    @JsonProperty("dateHired")
+    private String dateHired = null;
+
+    @JsonProperty("isActiveEmployee")
+    private boolean isActiveEmployee = true;
+
+    public Employee(String id, String name, String surname, Address address, String phone, String email, String dateHired, boolean isActiveEmployee) {
         this.id = id;
         this.name = name;
         this.surname = surname;
-        this.loyaltyId = loyaltyId;
         this.address = address;
         this.phone = phone;
         this.email = email;
@@ -54,14 +69,6 @@ public class Employee {
         this.surname = surname;
     }
 
-    public String getLoyaltyId() {
-        return loyaltyId;
-    }
-
-    public void setLoyaltyId(String loyaltyId) {
-        this.loyaltyId = loyaltyId;
-    }
-
     public Address getAddress() {
         return address;
     }
@@ -86,11 +93,11 @@ public class Employee {
         this.email = email;
     }
 
-    public Date getDateHired() {
+    public String getDateHired() {
         return dateHired;
     }
 
-    public void setDateHired(Date dateHired) {
+    public void setDateHired(String dateHired) {
         this.dateHired = dateHired;
     }
 
@@ -111,7 +118,6 @@ public class Employee {
                 Objects.equals(id, employee.id) &&
                 Objects.equals(name, employee.name) &&
                 Objects.equals(surname, employee.surname) &&
-                Objects.equals(loyaltyId, employee.loyaltyId) &&
                 Objects.equals(address, employee.address) &&
                 Objects.equals(phone, employee.phone) &&
                 Objects.equals(email, employee.email) &&
@@ -120,7 +126,7 @@ public class Employee {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, surname, loyaltyId, address, phone, email, dateHired, isActiveEmployee);
+        return Objects.hash(id, name, surname, address, phone, email, dateHired, isActiveEmployee);
     }
 
     @Override
@@ -129,7 +135,6 @@ public class Employee {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", loyaltyId='" + loyaltyId + '\'' +
                 ", address=" + address +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +

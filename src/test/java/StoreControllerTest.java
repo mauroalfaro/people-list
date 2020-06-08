@@ -3,7 +3,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
-import service.StoreService;
+import com.alfarosoft.peoplelist.service.StoreService;
 
 @SpringBootTest
 @AutoConfigureMockMvc

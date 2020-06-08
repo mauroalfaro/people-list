@@ -1,16 +1,31 @@
-package model;
+package com.alfarosoft.peoplelist.model;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
 public class Customer {
 
-    private String id;
-    private String name;
-    private String surname;
-    private String loyaltyId;
-    private Address address;
-    private String phone;
-    private String email;
+    @JsonProperty("customerId")
+    private String id = null;
+
+    @JsonProperty("customerName")
+    private String name = null;
+
+    @JsonProperty("customerSurname")
+    private String surname= null;
+
+    @JsonProperty("loyaltyId")
+    private String loyaltyId = null;
+
+    @JsonProperty("customerAddress")
+    private Address address = null;
+
+    @JsonProperty("customerPhone")
+    private String phone = null;
+
+    @JsonProperty("customerEmail")
+    private String email = null;
 
     public Customer() {
     }

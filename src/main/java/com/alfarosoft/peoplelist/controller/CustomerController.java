@@ -1,12 +1,12 @@
-package controller;
+package com.alfarosoft.peoplelist.controller;
 
-import exception.PeopleListException;
-import model.Customer;
+import com.alfarosoft.peoplelist.exception.PeopleListException;
+import com.alfarosoft.peoplelist.model.Customer;
+import com.alfarosoft.peoplelist.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.CustomerService;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 

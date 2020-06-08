@@ -1,21 +1,25 @@
-package model;
+package com.alfarosoft.peoplelist.model;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 import java.util.Objects;
 
 public class Store {
 
-    private String id;
-    private String storeName;
-    private Address address;
-    private List<Employee> employees;
+    @JsonProperty("storeId")
+    private String id = null;
 
+    @JsonProperty("storeName")
+    private String storeName = null;
 
-    public Store(String id, String storeName, Address address, List<Employee> employees) {
+    @JsonProperty("storeAddress")
+    private Address address = null;
+
+    public Store(String id, String storeName, Address addresss) {
         this.id = id;
         this.storeName = storeName;
         this.address = address;
-        this.employees = employees;
     }
 
     public Store() {
@@ -45,14 +49,6 @@ public class Store {
         this.address = address;
     }
 
-    public List<Employee> getEmployees() {
-        return employees;
-    }
-
-    public void setEmployees(List<Employee> employees) {
-        this.employees = employees;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -60,13 +56,12 @@ public class Store {
         Store store = (Store) o;
         return Objects.equals(id, store.id) &&
                 Objects.equals(storeName, store.storeName) &&
-                Objects.equals(address, store.address) &&
-                Objects.equals(employees, store.employees);
+                Objects.equals(address, store.address);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, storeName, address, employees);
+        return Objects.hash(id, storeName, address);
     }
 
     @Override
@@ -75,7 +70,6 @@ public class Store {
                 "id='" + id + '\'' +
                 ", storeName='" + storeName + '\'' +
                 ", address=" + address +
-                ", employees=" + employees +
                 '}';
     }
 }

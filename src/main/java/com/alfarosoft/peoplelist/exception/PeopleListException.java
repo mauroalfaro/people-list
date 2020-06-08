@@ -1,4 +1,4 @@
-package exception;
+package com.alfarosoft.peoplelist.exception;
 
 public class PeopleListException extends RuntimeException{
 

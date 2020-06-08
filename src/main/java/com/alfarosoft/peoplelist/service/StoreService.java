@@ -1,6 +1,6 @@
-package service;
+package com.alfarosoft.peoplelist.service;
 
-import model.Store;
+import com.alfarosoft.peoplelist.model.Store;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,11 +18,11 @@ public class StoreService {
     }
 
     public Store addStore (Store store){
-        return new Store();
+        return store;
     }
 
     public Store updateStore (String id, Store store){
-        return new Store();
+        return store;
     }
 
     public void removeStore (String id){

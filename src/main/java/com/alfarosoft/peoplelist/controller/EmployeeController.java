@@ -1,13 +1,12 @@
-package controller;
+package com.alfarosoft.peoplelist.controller;
 
-import ch.qos.logback.core.pattern.util.RegularEscapeUtil;
-import exception.PeopleListException;
-import model.Employee;
+import com.alfarosoft.peoplelist.exception.PeopleListException;
+import com.alfarosoft.peoplelist.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.EmployeeService;
+import com.alfarosoft.peoplelist.service.EmployeeService;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 import java.util.List;

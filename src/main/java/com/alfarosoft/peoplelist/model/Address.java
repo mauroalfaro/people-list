@@ -1,22 +1,40 @@
-package model;
+package com.alfarosoft.peoplelist.model;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
 public class Address {
 
-    private String street;
-    private Integer number;
-    private String floor;
-    private String apartment;
+    @JsonProperty("street")
+    private String street = null;
 
-    private String postalCode;
+    @JsonProperty("number")
+    private Integer number = null;
 
-    public Address(String street, Integer number, String floor, String apartment, String postalCode) {
+    @JsonProperty("floor")
+    private String floor = null;
+
+    @JsonProperty("apartment")
+    private String apartment = null;
+
+    @JsonProperty("postalCode")
+    private String postalCode = null;
+
+    @JsonProperty("city")
+    private String city;
+
+    @JsonProperty("state")
+    private String state;
+
+    public Address(String street, Integer number, String floor, String apartment, String postalCode, String city, String state) {
         this.street = street;
         this.number = number;
         this.floor = floor;
         this.apartment = apartment;
         this.postalCode = postalCode;
+        this.city = city;
+        this.state = state;
     }
 
     public String getStreet() {
@@ -59,6 +77,22 @@ public class Address {
         this.postalCode = postalCode;
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -68,12 +102,14 @@ public class Address {
                 Objects.equals(number, address.number) &&
                 Objects.equals(floor, address.floor) &&
                 Objects.equals(apartment, address.apartment) &&
-                Objects.equals(postalCode, address.postalCode);
+                Objects.equals(postalCode, address.postalCode) &&
+                Objects.equals(city, address.city) &&
+                Objects.equals(state, address.state);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(street, number, floor, apartment, postalCode);
+        return Objects.hash(street, number, floor, apartment, postalCode, city, state);
     }
 
     @Override
@@ -84,6 +120,8 @@ public class Address {
                 ", floor='" + floor + '\'' +
                 ", apartment='" + apartment + '\'' +
                 ", postalCode='" + postalCode + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
                 '}';
     }
 }
