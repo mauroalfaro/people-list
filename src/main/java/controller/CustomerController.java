@@ -10,6 +10,8 @@ import service.CustomerService;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "/services/customers")
 public class CustomerController {
@@ -21,14 +23,30 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
+    @PostMapping(value = "/add", produces = APPLICATION_JSON_VALUE, consumes = APPLICATION_JSON_VALUE)
+    public ResponseEntity<Customer> addCustomer (@RequestBody Customer customer){
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(customerService.addCustomer(customer));
+    }
+
     @GetMapping(value = "/{id}", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<Customer> lookupCustomer (@PathVariable String id){
         return ResponseEntity.status(HttpStatus.OK).body(customerService.getCustomer(id));
     }
 
-    @PostMapping(value = "/add", produces = APPLICATION_JSON_VALUE, consumes = APPLICATION_JSON_VALUE)
-    public ResponseEntity<Customer> addCustomer (@RequestBody Customer customer){
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body(customerService.addCustomer(customer));
+    @GetMapping(produces = APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Customer>> searchCustomers(){
+        return ResponseEntity.status(HttpStatus.OK).body(customerService.getCustomers());
+    }
+
+    @PutMapping(value = "/update/{id}" , produces = APPLICATION_JSON_VALUE, consumes = APPLICATION_JSON_VALUE)
+    public ResponseEntity<Customer> updateCustomer (@PathVariable String id, @RequestBody Customer customer){
+        return ResponseEntity.status(HttpStatus.OK).body(customerService.updateCustomer(id, customer));
+    }
+
+    @DeleteMapping(value = "/delete/{id}", produces = APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> deleteCustomer(@PathVariable String id){
+        customerService.removeCustomer(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Customer successfully removed");
     }
 
     @ExceptionHandler(PeopleListException.class)

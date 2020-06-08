@@ -9,11 +9,14 @@ public class Address {
     private String floor;
     private String apartment;
 
-    public Address(String street, Integer number, String floor, String apartment) {
+    private String postalCode;
+
+    public Address(String street, Integer number, String floor, String apartment, String postalCode) {
         this.street = street;
         this.number = number;
         this.floor = floor;
         this.apartment = apartment;
+        this.postalCode = postalCode;
     }
 
     public String getStreet() {
@@ -48,6 +51,14 @@ public class Address {
         this.apartment = apartment;
     }
 
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -56,12 +67,13 @@ public class Address {
         return Objects.equals(street, address.street) &&
                 Objects.equals(number, address.number) &&
                 Objects.equals(floor, address.floor) &&
-                Objects.equals(apartment, address.apartment);
+                Objects.equals(apartment, address.apartment) &&
+                Objects.equals(postalCode, address.postalCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(street, number, floor, apartment);
+        return Objects.hash(street, number, floor, apartment, postalCode);
     }
 
     @Override
@@ -71,6 +83,7 @@ public class Address {
                 ", number=" + number +
                 ", floor='" + floor + '\'' +
                 ", apartment='" + apartment + '\'' +
+                ", postalCode='" + postalCode + '\'' +
                 '}';
     }
 }
