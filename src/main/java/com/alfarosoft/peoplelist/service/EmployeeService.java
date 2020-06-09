@@ -1,12 +1,18 @@
 package com.alfarosoft.peoplelist.service;
 
+import com.alfarosoft.peoplelist.builders.EmployeeMockDataBuilder;
 import com.alfarosoft.peoplelist.model.Employee;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeService {
+    private EmployeeMockDataBuilder employeeMockDataBuilder;
+    private List<Employee> employeeList;
+
     public EmployeeService() {
+        this.employeeMockDataBuilder = new EmployeeMockDataBuilder();
+        employeeList = employeeMockDataBuilder.buildMockedData();
     }
 
     public Employee getEmployee(String id){
@@ -14,10 +20,11 @@ public class EmployeeService {
     }
 
     public List<Employee> getEmployees() {
-        return new ArrayList<Employee>();
+        return employeeList;
     }
 
     public Employee addEmployee (Employee employee){
+        employeeList.add(employee);
         return employee;
     }
 
