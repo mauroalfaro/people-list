@@ -2,7 +2,8 @@ package com.alfarosoft.peoplelist.builders;
 
 import com.alfarosoft.peoplelist.model.Address;
 import com.alfarosoft.peoplelist.model.Employee;
-import org.graalvm.compiler.core.common.type.ArithmeticOpTable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,11 +11,14 @@ import java.util.List;
 public class EmployeeMockDataBuilder {
     List<Employee> employeeMocks;
 
+    private Logger log = LoggerFactory.getLogger(EmployeeMockDataBuilder.class);
+
     public EmployeeMockDataBuilder() {
         this.employeeMocks = new ArrayList<>();
     }
 
     public List<Employee> buildMockedData(){
+        log.info("Employees are being mocked");
         Employee firstEmployee = new Employee();
         Employee secondEmployee = new Employee();
         Employee thirdEmployee = new Employee();
@@ -72,6 +76,7 @@ public class EmployeeMockDataBuilder {
         employeeMocks.add(secondEmployee);
         employeeMocks.add(thirdEmployee);
 
+        log.info("Employees successfully mocked");
         return employeeMocks;
     }
 }
