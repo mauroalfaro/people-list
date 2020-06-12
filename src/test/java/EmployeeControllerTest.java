@@ -1,5 +1,4 @@
 import com.alfarosoft.peoplelist.PeopleListApp;
-import com.alfarosoft.peoplelist.model.Customer;
 import com.alfarosoft.peoplelist.model.Employee;
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.Test;

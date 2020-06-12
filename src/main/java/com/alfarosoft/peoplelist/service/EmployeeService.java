@@ -3,7 +3,6 @@ package com.alfarosoft.peoplelist.service;
 import com.alfarosoft.peoplelist.builders.EmployeeMockDataBuilder;
 import com.alfarosoft.peoplelist.model.Employee;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeService {

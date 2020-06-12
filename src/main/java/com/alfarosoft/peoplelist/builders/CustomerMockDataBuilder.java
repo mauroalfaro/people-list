@@ -2,7 +2,6 @@ package com.alfarosoft.peoplelist.builders;
 
 import com.alfarosoft.peoplelist.model.Address;
 import com.alfarosoft.peoplelist.model.Customer;
-import com.alfarosoft.peoplelist.model.Employee;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

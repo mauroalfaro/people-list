@@ -1,11 +1,8 @@
 package com.alfarosoft.peoplelist.service;
 
-import com.alfarosoft.peoplelist.builders.CustomerMockDataBuilder;
 import com.alfarosoft.peoplelist.builders.StoreMockDataBuilder;
-import com.alfarosoft.peoplelist.model.Customer;
 import com.alfarosoft.peoplelist.model.Store;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class StoreService {
