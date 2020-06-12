@@ -76,7 +76,7 @@ public class CustomerMockDataBuilder {
         customerMocks.add(secondCustomer);
         customerMocks.add(thirdCustomer);
 
-        log.info("Employees successfully mocked");
+        log.info("Customers successfully mocked");
 
         return customerMocks;
     }
