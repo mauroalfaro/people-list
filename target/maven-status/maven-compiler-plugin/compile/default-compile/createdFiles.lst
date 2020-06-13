@@ -5,6 +5,7 @@ com\alfarosoft\peoplelist\exception\PeopleListException.class
 com\alfarosoft\peoplelist\service\EmployeeService.class
 com\alfarosoft\peoplelist\controller\CustomerController.class
 com\alfarosoft\peoplelist\builders\StoreMockDataBuilder.class
+com\alfarosoft\peoplelist\exception\AddressValidationException.class
 com\alfarosoft\peoplelist\model\Customer.class
 com\alfarosoft\peoplelist\model\Address.class
 com\alfarosoft\peoplelist\model\Employee.class

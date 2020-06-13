@@ -14,4 +14,5 @@ D:\Development\people-list-mocked\src\main\java\com\alfarosoft\peoplelist\servic
 D:\Development\people-list-mocked\src\main\java\com\alfarosoft\peoplelist\controller\StoreController.java
 D:\Development\people-list-mocked\src\main\java\com\alfarosoft\peoplelist\builders\CustomerMockDataBuilder.java
 D:\Development\people-list-mocked\src\main\java\com\alfarosoft\peoplelist\controller\EmployeeController.java
+D:\Development\people-list-mocked\src\main\java\com\alfarosoft\peoplelist\exception\AddressValidationException.java
 D:\Development\people-list-mocked\src\main\java\com\alfarosoft\peoplelist\model\Store.java

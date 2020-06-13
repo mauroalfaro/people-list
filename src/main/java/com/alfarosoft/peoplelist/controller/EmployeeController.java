@@ -1,7 +1,9 @@
 package com.alfarosoft.peoplelist.controller;
 
+import com.alfarosoft.peoplelist.exception.AddressValidationException;
 import com.alfarosoft.peoplelist.exception.PeopleListException;
 import com.alfarosoft.peoplelist.model.Employee;
+import com.alfarosoft.peoplelist.validation.AddressValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,14 +18,17 @@ import java.util.List;
 public class EmployeeController {
 
     private final EmployeeService employeeService;
+    private final AddressValidation addressValidation;
 
     @Autowired
-    public EmployeeController(EmployeeService employeeService) {
+    public EmployeeController(EmployeeService employeeService, AddressValidation addressValidation) {
         this.employeeService = employeeService;
+        this.addressValidation = addressValidation;
     }
 
     @PostMapping(value = "/add", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<Employee> addEmployee (@RequestBody Employee employee){
+        addressValidation.validateAddress(employee.getAddress());
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(employeeService.addEmployee(employee));
     }
 
@@ -52,4 +57,11 @@ public class EmployeeController {
     public ResponseEntity<String> handleException(final PeopleListException e){
         return ResponseEntity.status(e.getStatus()).body(e.getMessage());
     }
+
+    @ExceptionHandler(AddressValidationException.class)
+    public ResponseEntity<String> handleException(final AddressValidationException e){
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+    }
 }
+
+

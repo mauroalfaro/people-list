@@ -1,7 +1,9 @@
 package com.alfarosoft.peoplelist.controller;
 
+import com.alfarosoft.peoplelist.exception.AddressValidationException;
 import com.alfarosoft.peoplelist.exception.PeopleListException;
 import com.alfarosoft.peoplelist.model.Store;
+import com.alfarosoft.peoplelist.validation.AddressValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,14 +17,17 @@ import java.util.List;
 @RequestMapping(value = "/services/stores")
 public class StoreController {
     private final StoreService storeService;
+    private final AddressValidation addressValidation;
 
     @Autowired
-    public StoreController(StoreService storeService) {
+    public StoreController(StoreService storeService, AddressValidation addressValidation) {
         this.storeService = storeService;
+        this.addressValidation = addressValidation;
     }
 
     @PostMapping(value = "/add", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<Store> addStore(@RequestBody Store store){
+        addressValidation.validateAddress(store.getAddress());
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(storeService.addStore(store));
     }
 
@@ -50,5 +55,10 @@ public class StoreController {
     @ExceptionHandler(PeopleListException.class)
     public ResponseEntity<String> handleException(final PeopleListException e){
         return ResponseEntity.status(e.getStatus()).body(e.getMessage());
+    }
+
+    @ExceptionHandler(AddressValidationException.class)
+    public ResponseEntity<String> handleException(final AddressValidationException e){
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
     }
 }

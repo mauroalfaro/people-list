@@ -1,4 +1,4 @@
-[{
+{
   "customerId": "192",
   "customerName": "Mauro",
   "customerSurname": "Alfaro",
@@ -10,8 +10,8 @@
     "apartment" : "B",
     "postalCode": "CP1875",
     "city" : "Avellaneda",
-    "state" : "Florida"
+    "state" : "BsAs"
   },
   "customerPhone": "1155622909",
   "customerEmail": "mauroalfaroo@gmail.com"
-}]
+}
