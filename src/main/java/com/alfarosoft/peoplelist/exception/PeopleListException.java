@@ -1,19 +1,20 @@
 package com.alfarosoft.peoplelist.exception;
 
 public class PeopleListException extends RuntimeException{
+    private String message;
 
-    private Integer status;
-
-    public PeopleListException(Integer status) {
+    public PeopleListException(String message) {
         super();
-        this.status = status;
+        this.message = message;
     }
 
-    public Integer getStatus() {
-        return status;
+    @Override
+    public String getMessage() {
+        return message;
     }
 
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setMessage(String message) {
+        this.message = message;
     }
+
 }

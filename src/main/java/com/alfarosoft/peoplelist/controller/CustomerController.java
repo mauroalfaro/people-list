@@ -56,7 +56,7 @@ public class CustomerController {
 
     @ExceptionHandler(PeopleListException.class)
     public ResponseEntity<String> handleException(final PeopleListException e){
-        return ResponseEntity.status(e.getStatus()).body(e.getMessage());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
     }
 
     @ExceptionHandler(AddressValidationException.class)
