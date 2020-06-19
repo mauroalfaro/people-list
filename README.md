@@ -5,3 +5,4 @@ Includes:
 - Spring Boot
 - Spring Boot Test
 - Mockito for MVC unit testing
+- Java 8 lambdas
