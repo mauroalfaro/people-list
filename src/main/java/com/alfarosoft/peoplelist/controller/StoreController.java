@@ -30,7 +30,7 @@ public class StoreController {
         this.addressValidation = addressValidation;
     }
 
-    @Operation(summary = "Adds a Store to the database")
+    @Operation(summary = "Adds a Store to the mocked list")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "202", description = "Store successfully created",
                     content = { @Content(mediaType = "application/json",
@@ -59,7 +59,7 @@ public class StoreController {
         return ResponseEntity.status(HttpStatus.OK).body(storeService.getStore(id));
     }
 
-    @Operation(summary = "Searches for all the Stores on the database")
+    @Operation(summary = "Searches for all the Stores on the mocked list")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Stores found",
                     content = { @Content(mediaType = "application/json",
@@ -87,7 +87,7 @@ public class StoreController {
         return ResponseEntity.status(HttpStatus.OK).body(storeService.updateStore(id, store));
     }
 
-    @Operation(summary = "Deletes a Store after finding it by id")
+    @Operation(summary = "Deletes a Store from the mocked list after finding it by id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "Store deleted",
                     content = { @Content(mediaType = "application/json",

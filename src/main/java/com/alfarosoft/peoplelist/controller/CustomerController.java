@@ -32,7 +32,7 @@ public class CustomerController {
         this.addressValidation = addressValidation;
     }
 
-    @Operation(summary = "Adds a customer to the database")
+    @Operation(summary = "Adds a customer to the mocked list")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "202", description = "Customer successfully created",
                     content = { @Content(mediaType = "application/json",
@@ -61,7 +61,7 @@ public class CustomerController {
         return ResponseEntity.status(HttpStatus.OK).body(customerService.getCustomer(id));
     }
 
-    @Operation(summary = "Searches for all the Customers on the database")
+    @Operation(summary = "Searches for all the Customers on the mocked list")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Customers found",
                     content = { @Content(mediaType = "application/json",
@@ -89,7 +89,7 @@ public class CustomerController {
         return ResponseEntity.status(HttpStatus.OK).body(customerService.updateCustomer(id, customer));
     }
 
-    @Operation(summary = "Deletes a Customer after finding it by id")
+    @Operation(summary = "Deletes a Customer from the list after finding it by id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "Customer deleted",
                     content = { @Content(mediaType = "application/json",

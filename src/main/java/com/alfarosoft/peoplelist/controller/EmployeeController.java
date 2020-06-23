@@ -31,7 +31,7 @@ public class EmployeeController {
         this.addressValidation = addressValidation;
     }
 
-    @Operation(summary = "Adds a employee to the database")
+    @Operation(summary = "Adds a employee to the mocked list")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "202", description = "Employee successfully created",
                     content = { @Content(mediaType = "application/json",
@@ -46,7 +46,7 @@ public class EmployeeController {
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(employeeService.addEmployee(employee));
     }
 
-    @Operation(summary = "Searches for all the Employees on the database")
+    @Operation(summary = "Searches for all the Employees on the mocked list")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Employees found",
                     content = { @Content(mediaType = "application/json",
@@ -88,7 +88,7 @@ public class EmployeeController {
         return ResponseEntity.status(HttpStatus.OK).body(employeeService.updateEmployee(id, employee));
     }
 
-    @Operation(summary = "Deletes a Employee after finding it by id")
+    @Operation(summary = "Deletes a Employee from the mocked list after finding it by id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "Employee deleted",
                     content = { @Content(mediaType = "application/json",
