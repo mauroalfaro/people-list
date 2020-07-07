@@ -6,3 +6,4 @@ Includes:
 - Spring Boot Test
 - Mockito for MVC unit testing
 - Java 8 lambdas
+- OpenApi UI to test the app
