@@ -1,4 +1,4 @@
-# people-list-docker 
+# people-list-mocked
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/mauroalfaro/people-list-mocked)](https://github.com/mauroalfaro/people-list-mocked/releases/tag/v1.0)
 
 ## Description
